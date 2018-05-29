@@ -1,0 +1,47 @@
+// --------------------------------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------------------------------
+@import 'vars';
+// notice not using underscore or extension sass knows how to find
+body {
+  background: $background-color;
+  font-family: sans-serif;
+  color: $font-color;
+}
+a {
+  color: $font-color;
+  text-decoration: none;
+
+}
+a:hover {
+  text-decoration: underline;
+}
+.error {
+  border: 1px solid $error;
+}
+header, main, footer, article, section, div, p, ul, h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+  }
+li {
+  display: inline-block;
+  width: 30%;
+  margin-right: 0px;
+  margin-left: 70%;
+}
+p {
+padding: $spacing, $spacing;
+background: $loud;
+}
+button {
+  margin: 2%;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+

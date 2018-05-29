@@ -1,0 +1,32 @@
+@import 'normalize';
+@import 'base';
+
+.app {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+  }
+.dashboard{
+ margin-top: $spacing;
+  
+}
+.note-item {
+  margin-top: $spacing;
+  background-color: $quiet;
+
+}
+.note-form {
+  margin-top: $spacing;
+}
+input {
+  margin-left: $spacing;
+}
+button {
+  margin-left: 2%;
+}
+
+// 
+// TODO: Add styling to your To Do App! make it look nice :
+// --------------------------------------------------------------------------------------
+// no need do too much here for now, later will have layout stuff, but for now just knitting our files together
+// --------------------------------------------------------------------------------------
