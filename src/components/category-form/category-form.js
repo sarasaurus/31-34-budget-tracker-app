@@ -55,7 +55,7 @@ class CategoryForm extends React.Component {
 }
 
 CategoryForm.propTypes = {
-  onComplete: PropTypes.func, // this will be to create a category
-  category: PropTypes.object, // this will be the seciton we want to update
+  onComplete: PropTypes.func,
+  category: PropTypes.object, 
 };
 export default CategoryForm;
