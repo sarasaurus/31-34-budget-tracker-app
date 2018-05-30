@@ -22,9 +22,9 @@ const update = category => ({
   type: 'CATEGORY_UPDATE',
   payload: category,  
 });
-const remove = category => ({
+const destroy = category => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
 
-export { create, update, remove };
+export { create, update, destroy };

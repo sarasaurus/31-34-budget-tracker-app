@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
-import * as categoryActions from '../../action/category-action';
+import * as categoryActions from '../redux/action/category-action';
 import CategoryForm from '../category-form/category-form';
 
 class Category extends React.Component {
@@ -26,7 +26,7 @@ class Category extends React.Component {
   }
 }
 
-Category.PropTypes = {
+Category.propTypes = {
   category: PropTypes.object,
   key: PropTypes.number,
   categoryRemove: PropTypes.func,

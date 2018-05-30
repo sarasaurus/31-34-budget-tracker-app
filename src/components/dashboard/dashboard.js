@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as categoryActions from '../../action/category-action';
+import * as categoryActions from '../redux/action/category-action';
 import CategoryForm from '../category-form/category-form';
 import Category from '../category/category';
 import '../../../styles/main.scss';
