@@ -16,7 +16,7 @@ class CardItem extends React.Component {
 console.log('card props', this.props);
     return (
   <div className='card'>
-  <p>{card.content}</p>
+  <p>{card.name}: {card.price}</p>
   <button onClick={() => cardDestroy(card)}>Delete</button>
   <CardForm card={card} onComplete={cardUpdate} />
 

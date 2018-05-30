@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
     // categories is an object with a categories property 
     return (
 <div className="dashboard">
-<h1>display a list of all the categories</h1>
+<h1>enter an expense category and budget for it</h1>
 <CategoryForm onComplete={categoryCreate} />
 {categories.categories.map((currentCategory, i) => <CategoryItem category={currentCategory}key={i}/>)}
   </div>

@@ -25,11 +25,11 @@ class CategoryForm extends React.Component {
     this.setState(defaultState); // resetting state to empty
   }
   handleNameChange(event) {
-    const value = event.target.value;
+    const value = event.target.value;// eslint-disable-line
     this.setState({ name: value });
   }
   handleBudgetChange(event) {
-    const value = event.target.value;
+    const value = event.target.value;// eslint-disable-line
     this.setState({ budget: value });
   }
   // life cycle hook givn to use by react
@@ -37,12 +37,12 @@ class CategoryForm extends React.Component {
   // this replaces a lifecycle hook called component will recieve props
   // static is common to other OOP languages--- static means a method attached to class. but not as an instance.
 
-  // static getDerivedStateFromProps(nextProps) {
-  //   if (nextProps.category) {
-  //     return nextProps.category;
-  //   }
-  //   return defaultState;
-  // }
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.category) {
+      return nextProps.category;
+    }
+    return defaultState;
+  }
   
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';

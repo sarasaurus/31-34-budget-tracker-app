@@ -9,8 +9,8 @@ export default class App extends React.Component {
 <div className="app">
 <BrowserRouter>
 <div>
-  <header>
-    <h1>Trello Style App</h1>
+  <header className='app-header'>
+    <h1>Budget Tracking App</h1>
     <nav>
       <ul>
         <li><Link to="/">Home</Link></li>
