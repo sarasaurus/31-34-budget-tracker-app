@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
 
-const defaultState = { content: '' };
+const defaultState = { name: '', price: '' };
 
 class CardForm extends React.Component {
   constructor(props) {
@@ -14,8 +14,11 @@ class CardForm extends React.Component {
     autoBind.call(this, CardForm);
   }
 
-  handleChange(event) {
-    this.setState({ content: event.target.value });
+  handleNameChange(event) {
+    this.setState({ name: event.target.value });
+  }
+  handlePriceChange(event) {
+    this.setState({ price: event.target.value });
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -32,7 +35,7 @@ class CardForm extends React.Component {
 
   render() {
     const { card } = this.props;
-    const buttonText = card ? 'Update Card' : 'Create Card';
+    const buttonText = card ? 'Update Expense' : 'Create Expense';
     return (
     <form
       className="card-form"
@@ -40,10 +43,16 @@ class CardForm extends React.Component {
       >
       <input 
       type='text'
-      name='content'
-      placeholder='card content'
-      value={this.state.content}
-      onChange={this.handleChange} />
+      name='name'
+      placeholder='name'
+      value={this.state.name}
+      onChange={this.handleNameChange} />
+       <input 
+      type='text'
+      name='price'
+      placeholder='price'
+      value={this.state.price}
+      onChange={this.handlePriceChange} />
       <button type='submit'>{buttonText}</button>
       </form>
     );

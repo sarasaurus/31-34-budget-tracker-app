@@ -1,9 +1,10 @@
 import uuid from 'uuid';
 
-const create = ({ content, categoryId }) => ({
+const create = ({ name, price, categoryId }) => ({
   type: 'CARD_CREATE',
   payload: {
-    content,
+    name,
+    price,
     categoryId,
     id: uuid(),
     timestamp: new Date(),
