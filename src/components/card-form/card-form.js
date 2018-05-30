@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as cardActions from '../redux/action/card-action';
+// import * as cardActions from '../redux/action/card-action';
 import autoBind from '../../utils/utils';
 
 
@@ -11,7 +11,7 @@ class CardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.card || defaultState;
-    autoBind.call(this.props, CardForm);
+    autoBind.call(this, CardForm);
   }
 
   handleChange(event) {
@@ -24,7 +24,7 @@ class CardForm extends React.Component {
 
     this.props.onComplete({
       ...this.state,
-      sectionId,
+      categoryId,
     });
     this.setState(defaultState);
   }
@@ -40,8 +40,8 @@ class CardForm extends React.Component {
       >
       <input 
       type='text'
-      name='card'
-      placeholder='enter a sub-category'
+      name='content'
+      placeholder='card content'
       value={this.state.content}
       onChange={this.handleChange} />
       <button type='submit'>{buttonText}</button>

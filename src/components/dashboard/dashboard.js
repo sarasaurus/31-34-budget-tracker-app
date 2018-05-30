@@ -9,17 +9,19 @@ import '../../../styles/main.scss';
 class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate } = this.props; 
+    console.log('props in dashboard', this.props);
+    // categories is an object with a categories property 
     return (
 <div className="dashboard">
 <h1>display a list of all the categories</h1>
 <CategoryForm onComplete={categoryCreate} />
-{categories.map((currentCategory, i) => <CategoryItem category={currentCategory}key={i}/>)}
+{categories.categories.map((currentCategory, i) => <CategoryItem category={currentCategory}key={i}/>)}
   </div>
     ); 
   }
 }
 Dashboard.propTypes = {
-  categories: PropTypes.array,
+  categories: PropTypes.object,
   categoryCreate: PropTypes.func,
 };
 

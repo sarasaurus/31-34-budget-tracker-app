@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+// import CardForm from '../card-form/card-form';
+// import * as cardActions from '../redux/action/card-action';
+
 
 // this is UI state
 const defaultState = {
   name: '',
   budget: '',
 };
+// i think i may need to modify this?
 
 class CategoryForm extends React.Component {
   constructor(props) {
@@ -28,6 +32,17 @@ class CategoryForm extends React.Component {
     const value = event.target.value;
     this.setState({ budget: value });
   }
+  // life cycle hook givn to use by react
+  // think of these as listeners--- listenging to state changes
+  // this replaces a lifecycle hook called component will recieve props
+  // static is common to other OOP languages--- static means a method attached to class. but not as an instance.
+
+  // static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.category) {
+  //     return nextProps.category;
+  //   }
+  //   return defaultState;
+  // }
   
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';

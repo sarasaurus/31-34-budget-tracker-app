@@ -1,14 +1,35 @@
 // this is basically the state of the App -- ie where the switch statements to modify the the state regarding categories
-const emptyState = [];
+const emptyState = {};
 export default (state = emptyState, { type, payload }) => {
   // can/should add syntax validation
+  let categoryId;
+  let categoryCards;
+  let updatedCards;
+  let updatedState;
+
   switch (type) {
+    case 'CATEGORY_CREATE':
+      return { ...state, [payload.id]: [] };
+    case 'CATEGORY_DESTROY':
+      updatedState = { ...state };
+      delete updatedState[payload.id];
+      return updatedState;
     case 'CARD_CREATE':
-      return [...state, payload];
+      categoryId = payload.categoryId; // eslint-disable-line 
+      categoryCards = state[categoryId];
+      updatedCards = [...categoryCards, payload];
+      return { ...state, [categoryId]: updatedCards };
+
     case 'CARD_UPDATE':
-      return state.map(card => (card.id === payload.id ? payload : card));
+      categoryId = payload.categoryId;// eslint-disable-line 
+      categoryCards = state[categoryId];
+      updatedCards = categoryCards.map(card => (card.id === payload.id ? payload : card));
+      return { ...state, [categoryId]: updatedCards };
     case 'CARD_DESTROY':
-      return state.filter(card => (card.id !== payload.id));
+      categoryId = payload.categoryId;// eslint-disable-line 
+      categoryCards = state[categoryId];
+      updatedCards = categoryCards.filter(card => card.id !== payload.id);
+      return { ...state, [categoryId]: updatedCards };
     default: 
       return state;
   }
