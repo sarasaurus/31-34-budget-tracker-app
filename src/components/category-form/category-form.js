@@ -18,6 +18,7 @@ class CategoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState); // resetting state to empty
   }
   handleNameChange(event) {
     const value = event.target.value;

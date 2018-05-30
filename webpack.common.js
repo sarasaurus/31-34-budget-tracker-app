@@ -18,7 +18,7 @@ webpackConfig.output = {
 // to write the html
 webpackConfig.plugins = [
   new HTMLWebpackPlugin({
-    title: 'Route Demo', // title is not required, its optional 
+    title: 'Budget App', // title is not required, its optional 
   }),
   new MiniCssPlugin({
     filename: '[name].[hash].css',
