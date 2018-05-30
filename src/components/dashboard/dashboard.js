@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as categoryActions from '../redux/action/category-action';
 import CategoryForm from '../category-form/category-form';
-import Category from '../category/category';
+import CategoryItem from '../category-item/category-item';
 import '../../../styles/main.scss';
 
 // Provider --> Store --> State
@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
 <div className="dashboard">
 <h1>display a list of all the categories</h1>
 <CategoryForm onComplete={categoryCreate} />
-{categories.map((currentCategory, i) => <Category category={currentCategory}key={i}/>)}
+{categories.map((currentCategory, i) => <CategoryItem category={currentCategory}key={i}/>)}
   </div>
     ); 
   }
