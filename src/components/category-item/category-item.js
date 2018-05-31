@@ -26,12 +26,12 @@ class CategoryItem extends React.Component {
 
     return (
       <div className='category' key={key}>
-        <h1>Category: { category.name } Budget: ${ category.budget }</h1>
-        <button onClick={() => categoryDestroy(category)}>Delete</button>
-        <CategoryForm category={category} onComplete={categoryUpdate}/>
-        <CardForm category={category} onComplete={cardCreate}/>
-        <div className="card-list"> {categoryCards.map(card => <CardItem card = {card} key={card.id} />) } </div>
-        <CategoryBudget category={category} cards={categoryCards}/>
+        <h1>Category: { category.name } Total: ${ category.budget }</h1>
+        <button className='category-delete' onClick={() => categoryDestroy(category)}>Delete</button>
+        <CategoryForm className='category-form' category={category} onComplete={categoryUpdate}/>
+        <CardForm className='card-form' category={category} onComplete={cardCreate}/>
+        <div className="card-list"> <h1>Items:</h1>{categoryCards.map(card => <CardItem card = {card} key={card.id} />) } </div>
+        <CategoryBudget className='budget-header' category={category} cards={categoryCards}/>
       </div>
     );
   }

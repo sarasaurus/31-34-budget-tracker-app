@@ -52,7 +52,8 @@ webpackConfig.module.rules = [
   {// mini css plugin turns our styles into a single style sheet that we can link to-- previously we were just injecting styles into each html tag-- major no-no!
     test: /\.scss$/,
     use: [
-      MiniCssPlugin.loader,
+      // MiniCssPlugin.loader, // for production 
+      'style-loader', // for hot reload 
       'css-loader',
       'sass-loader',
     ],
