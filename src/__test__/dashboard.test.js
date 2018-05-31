@@ -41,7 +41,7 @@ describe('#Dashboard', () => {
     const mountedDashboard = mount(<Provider store={mockStoreFactory(testState)}><Dashboard/></Provider>);
     console.log(mountedDashboard.html());
 
-    expect(mountedDashboard.find('CategoryForm')).toBeTruthy();
+    expect(mountedDashboard.find('CategoryForm')).toBeTruthy(); 
     expect(mountedDashboard.find('CategoryItem').length).toEqual(2);
   });
 });

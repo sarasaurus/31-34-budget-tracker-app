@@ -42,3 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard); // connect takes in callback(state), callback(dispatch) -- it passes in the state, it passes in the disptch
+// currying because connect returns a function that takes a component
