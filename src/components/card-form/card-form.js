@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
 
-const defaultState = { name: '', price: '' };
+const defaultState = { name: '', price: 0 };
 
 class CardForm extends React.Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class CardForm extends React.Component {
       value={this.state.name}
       onChange={this.handleNameChange} />
        <input 
-      type='text'
+      type='number'
       name='price'
       placeholder='price'
       value={this.state.price}

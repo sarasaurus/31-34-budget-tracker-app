@@ -8,7 +8,7 @@ import autoBind from '../../utils/utils';
 // this is UI state
 const defaultState = {
   name: '',
-  budget: '',
+  budget: 0,
 };
 // i think i may need to modify this?
 
@@ -58,7 +58,7 @@ class CategoryForm extends React.Component {
         onChange={this.handleNameChange}
         /> 
         <input
-        type='text'
+        type='number'
         name='budget'
         placeholder='Category Budget'
         value={this.state.budget}

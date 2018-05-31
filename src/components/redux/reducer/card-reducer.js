@@ -6,9 +6,13 @@ export default (state = emptyState, { type, payload }) => {
   let categoryCards;
   let updatedCards;
   let updatedState;
-
+  let budget;
+  let budgetTotal;
+  console.log(payload, 'PAYLOAD');
+  console.log(state, 'STATE');
   switch (type) {
     case 'CATEGORY_CREATE':
+      console.log(state, 'STATE IN CARD CAT CREATE SWITCH');
       return { ...state, [payload.id]: [] };
     case 'CATEGORY_DESTROY':
       updatedState = { ...state };
@@ -18,6 +22,8 @@ export default (state = emptyState, { type, payload }) => {
       categoryId = payload.categoryId; // eslint-disable-line 
       categoryCards = state[categoryId];
       updatedCards = [...categoryCards, payload];
+      // budgetTotal = state.map(category => (category.id === categoryId ? category.budget - payload.price : category.budget));
+      console.log(state, 'STATE IN CARD CREATE SWITCH');
       return { ...state, [categoryId]: updatedCards };
 
     case 'CARD_UPDATE':
