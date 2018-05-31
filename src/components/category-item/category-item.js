@@ -31,7 +31,7 @@ class CategoryItem extends React.Component {
         <CategoryForm className='category-form' category={category} onComplete={categoryUpdate}/>
         <CardForm className='card-form' category={category} onComplete={cardCreate}/>
         <div className="card-list"> <h1>Items:</h1>{categoryCards.map(card => <CardItem card = {card} key={card.id} />) } </div>
-        <CategoryBudget className='budget-header' category={category} cards={categoryCards}/>
+        <CategoryBudget categoryId= {category.id} className='budget-header' />
       </div>
     );
   }

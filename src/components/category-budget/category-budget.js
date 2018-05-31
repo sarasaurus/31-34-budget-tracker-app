@@ -4,17 +4,20 @@ import PropTypes from 'prop-types';
 
 class CategoryBudget extends React.Component {
   render () {
-    const { cards, category } = this.props;
-    console.log('CARDS ARE WHAT:', cards);
-    console.log('CATEGORY IS', category.budget);
+    // need to get the id of the category you want to select the right category from the state categories array
+    const { categories, categoryId } = this.props;
+    console.log('BUDGET PROPS:', this.props);
+    console.log('CATEGORYID in BUDGET IS', categoryId);
+    console.log('CARDS in BUDGET ARE', categories.cards);
+   
     return (
       <div className="budget"><h1>
-        Remaining Budget: { cards.length > 0 ? 
-        category.budget - cards.reduce((total, card) => { 
+        Remaining Budget: { categories.cards.length > 0 ? 
+        categories.filter(category => category.id !== categoryId).budget - categories.cards.reduce((total, card) => { 
           console.log(`${total}TOTAL and  ${card.price} CARD PRICE`); 
           return total + card.price; 
         }, 0)
-          : category.budget 
+          : categories.categories.budget 
         }
       </h1>
       
@@ -24,8 +27,15 @@ class CategoryBudget extends React.Component {
 }
 
 CategoryBudget.propTypes = {
-  cards: PropTypes.array,
-  category: PropTypes.object,
+  categoryId: PropTypes.string,
+  categories: PropTypes.object,
 };
 
-export default CategoryBudget;
+const mapStateToProps = (state) => {
+  return {
+    categories: state,
+  };
+};
+
+// export default CategoryBudget;
+export default connect(mapStateToProps, null)(CategoryBudget); 

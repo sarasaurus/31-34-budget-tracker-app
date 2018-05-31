@@ -39,6 +39,7 @@ class CategoryForm extends React.Component {
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.category) {
+      console.log('DERIVED STATE', nextProps);
       return nextProps.category;
     }
     return defaultState;
