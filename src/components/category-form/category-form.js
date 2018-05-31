@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
-// import CardForm from '../card-form/card-form';
-// import * as cardActions from '../redux/action/card-action';
+// import ExpenseForm from '../expense-form/expense-form';
+// import * as expenseActions from '../redux/action/expense-action';
 
 
 // this is UI state

@@ -29,7 +29,7 @@ describe('#Dashboard', () => {
         id: '0.124',
         timestamp: new Date(),
       }],
-    cards: {
+    expenses: {
       0.123: [],
       0.124: [],
     },

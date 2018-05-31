@@ -8,14 +8,14 @@ class CategoryBudget extends React.Component {
     const { categories, categoryId } = this.props;
     console.log('BUDGET PROPS:', this.props);
     console.log('CATEGORYID in BUDGET IS', categoryId);
-    console.log('CARDS in BUDGET ARE', categories.cards);
+    console.log('EXPENSES in BUDGET ARE', categories.expenses);
    
     return (
       <div className="budget"><h1>
-        Remaining Budget: { categories.cards.length > 0 ? 
-        categories.filter(category => category.id !== categoryId).budget - categories.cards.reduce((total, card) => { 
-          console.log(`${total}TOTAL and  ${card.price} CARD PRICE`); 
-          return total + card.price; 
+        Remaining Budget: { categories.expenses.length > 0 ? 
+        categories.filter(category => category.id !== categoryId).budget - categories.expenses.reduce((total, expense) => { 
+          console.log(`${total}TOTAL and  ${expense.price} EXPENSE PRICE`); 
+          return total + expense.price; 
         }, 0)
           : categories.categories.budget 
         }
