@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+// import CardForm from '../card-form/card-form';
+// import * as cardActions from '../redux/action/card-action';
+
 
 // this is UI state
 const defaultState = {
   name: '',
-  budget: '',
+  budget: 0,
 };
+// i think i may need to modify this?
 
 class CategoryForm extends React.Component {
   constructor(props) {
@@ -18,14 +22,26 @@ class CategoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState); // resetting state to empty
   }
   handleNameChange(event) {
-    const value = event.target.value;
+    const value = event.target.value;// eslint-disable-line
     this.setState({ name: value });
   }
   handleBudgetChange(event) {
-    const value = event.target.value;
+    const value = event.target.value;// eslint-disable-line
     this.setState({ budget: value });
+  }
+  // life cycle hook givn to use by react
+  // think of these as listeners--- listenging to state changes
+  // this replaces a lifecycle hook called component will recieve props
+  // static is common to other OOP languages--- static means a method attached to class. but not as an instance.
+
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.category) {
+      return nextProps.category;
+    }
+    return defaultState;
   }
   
   render() {
@@ -42,7 +58,7 @@ class CategoryForm extends React.Component {
         onChange={this.handleNameChange}
         /> 
         <input
-        type='text'
+        type='number'
         name='budget'
         placeholder='Category Budget'
         value={this.state.budget}

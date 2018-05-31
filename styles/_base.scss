@@ -9,8 +9,10 @@ body {
   color: $font-color;
 }
 a {
+  font-size: $header-font;
   color: $font-color;
   text-decoration: none;
+  background-color: aqua;
 
 }
 a:hover {
@@ -25,6 +27,7 @@ header, main, footer, article, section, div, p, ul, h1 {
   padding: 0;
   width: 100%;
   display: inline-block;
+  background-color: red;
   }
 li {
   display: inline-block;
@@ -35,13 +38,23 @@ li {
 p {
 padding: $spacing, $spacing;
 background: $loud;
+font-size: $p-font;
 }
 button {
   margin: 2%;
 }
+h1 {
+  font-size: $header-font;
+  width: 55%;
+  background-color: yellow;
+}
 h3 {
   padding: 0;
   margin: 0;
+}
+form {
+  width: 44%;
+  background-color: orange;
 }
 
 

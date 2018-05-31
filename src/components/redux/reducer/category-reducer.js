@@ -1,3 +1,4 @@
+// this is basically the state of the App -- ie where the switch statements to modify the the state regarding categories
 const emptyState = [];
 export default (state = emptyState, { type, payload }) => {
   // can/should add syntax validation

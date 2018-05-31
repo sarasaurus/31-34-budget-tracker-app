@@ -4,20 +4,63 @@
 .app {
   display: block;
   max-width: 90%;
-  margin: 0 auto;
+  margin: 10% auto;
   }
 .dashboard{
  margin-top: $spacing;
   
 }
-.note-item {
+.budget {
+  background-color: yellow;
+  width: 50% - $spacing;
+  float: right;
+}
+.budget h1 {
+  text-align: right;
+  font-size: $header-font - 1vw;
+  background-color: pink;
+}
+.category {
   margin-top: $spacing;
-  background-color: $quiet;
+  background-color: fuchsia;
 
 }
-.note-form {
-  margin-top: $spacing;
+.category h1 {
+  background-color: teal;
+  width: 50%;
+  float: left;
 }
+.category-form {
+  margin-top: 3px;
+  width: 35%;
+  float: right;
+}
+.category-form button {
+  font-size: $button-font;
+  width: inherit;
+  float: right;
+}
+.category-delete {
+  float: right;
+  font-size: $button-font;
+}
+.category-form input {
+  font-size: $p-font;
+}
+.card-form {
+  margin-top: 3px;
+  width: 45%;
+  float: left;
+}
+.card {
+  background-color: orange;
+}
+.card p {
+ width: 50%;
+  background-color: aqua;
+  float: left;
+}
+
 input {
   margin-left: $spacing;
 }
