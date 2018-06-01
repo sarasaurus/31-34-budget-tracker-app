@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 
 const create = ({ name, price, categoryId }) => ({
-  type: 'CARD_CREATE',
+  type: 'EXPENSE_CREATE',
   payload: {
     name,
     price,
@@ -10,13 +10,13 @@ const create = ({ name, price, categoryId }) => ({
     timestamp: new Date(),
   },
 });
-const update = card => ({
-  type: 'CARD_UPDATE',
-  payload: card,  
+const update = expense => ({
+  type: 'EXPENSE_UPDATE',
+  payload: expense,  
 });
-const destroy = card => ({
-  type: 'CARD_DESTROY',
-  payload: card,
+const destroy = expense => ({
+  type: 'EXPENSE_DESTROY',
+  payload: expense,
 });
 
 export { create, update, destroy };

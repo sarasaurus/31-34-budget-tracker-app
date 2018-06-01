@@ -1,17 +1,17 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import * as cardActions from '../redux/action/card-action';
+// import * as expenseActions from '../redux/action/expense-action';
 import autoBind from '../../utils/utils';
 
 
 const defaultState = { name: '', price: 0 };
 
-class CardForm extends React.Component {
+class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.card || defaultState;
-    autoBind.call(this, CardForm);
+    this.state = props.expense || defaultState;
+    autoBind.call(this, ExpenseForm);
   }
 
   handleNameChange(event) {
@@ -23,7 +23,7 @@ class CardForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const categoryId = this.props.category ? this.props.category.id :
-      this.props.card.categoryId;
+      this.props.expense.categoryId;
 
     this.props.onComplete({
       ...this.state,
@@ -34,11 +34,11 @@ class CardForm extends React.Component {
 
 
   render() {
-    const { card } = this.props;
-    const buttonText = card ? 'Update Expense' : 'Create Expense';
+    const { expense } = this.props;
+    const buttonText = expense ? 'Update Expense' : 'Create Expense';
     return (
     <form
-      className="card-form"
+      className="expense-form"
       onSubmit={this.handleSubmit}
       >
       <input 
@@ -59,11 +59,11 @@ class CardForm extends React.Component {
   }
 }
 
-CardForm.propTypes = {
+ExpenseForm.propTypes = {
   onComplete: PropTypes.func,
   category: PropTypes.object,
-  card: PropTypes.object,
+  expense: PropTypes.object,
 };
 
 
-export default CardForm;
+export default ExpenseForm;

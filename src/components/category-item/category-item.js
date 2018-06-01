@@ -2,44 +2,51 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as categoryActions from '../redux/action/category-action';
-import * as cardActions from '../redux/action/card-action';
+import * as expenseActions from '../redux/action/expense-action';
 import CategoryForm from '../category-form/category-form';
-import CardForm from '../card-form/card-form';
-import CardItem from '../card-item/card-item';
+import ExpenseForm from '../expense-form/expense-form';
+import ExpenseItem from '../expense-item/expense-item';
 import CategoryBudget from '../category-budget/category-budget';
+import Modal from '../modal/modal';
 
 class CategoryItem extends React.Component {
   render() {
     const { 
-      cards,
-      cardCreate,
+      expenses,
+      expenseCreate,
       category, 
       key, 
       categoryDestroy, 
       categoryUpdate, 
     }
       = this.props;
-    console.log('category props', this.props); 
 
-    const categoryCards = cards[category.id];
-    // const totalPrice = categoryCards.reduce((total, card) => { return total + card.price; });
+      // TODO: if no categories in state-- show form and button=update, if categories in state exist, hide form and button=edit, if categories in state exist && editing ==false hide form and button =edit, if categories in state exist && editing == true show form and button = update.  button onclick == create and hide, edit and show, update and hide
+    // let editing = false;
+    // console.log('category props', this.props); 
+    const categoryExpenses = expenses[category.id];
+    // const totalPrice = categoryExpenses.reduce((total, expense) => { return total + expense.price; });
+    const showForm = () => showForm({ ...category, editing: true });
+    const hideForm = () => hideForm({ ...category, editing: false });
 
     return (
       <div className='category' key={key}>
         <h1>Category: { category.name } Total: ${ category.budget }</h1>
+        {/* <button className='category-edit' onClick={() => showForm()}>Edit</button> */}
         <button className='category-delete' onClick={() => categoryDestroy(category)}>Delete</button>
         <CategoryForm className='category-form' category={category} onComplete={categoryUpdate}/>
-        <CardForm className='card-form' category={category} onComplete={cardCreate}/>
-        <div className="card-list"> <h1>Items:</h1>{categoryCards.map(card => <CardItem card = {card} key={card.id} />) } </div>
-        <CategoryBudget className='budget-header' category={category} cards={categoryCards}/>
+        <h3>Editing {category.name}</h3>
+        <ExpenseForm className='expense-form' category={category} onComplete={expenseCreate}/>
+        <div className="expense-list"> <h1>Items:</h1>{categoryExpenses.map(expense => <ExpenseItem expense = {expense} key={expense.id} />) } </div>
+        <CategoryBudget categoryId= {category.id} className='budget-header' />
       </div>
     );
   }
 }
 
 CategoryItem.propTypes = {
-  cards: PropTypes.object,
-  cardCreate: PropTypes.func,
+  expenses: PropTypes.object,
+  expenseCreate: PropTypes.func,
   category: PropTypes.object,
   key: PropTypes.number,
   categoryDestroy: PropTypes.func,
@@ -47,12 +54,12 @@ CategoryItem.propTypes = {
 };
 
 const mapStateToProps = state => ({ 
-  cards: state.cards,  
+  expenses: state.expenses,  
 });
 
 const mapDispatchToProps = (dispatch) => { 
   return {
-    cardCreate: data => dispatch(cardActions.create(data)),
+    expenseCreate: data => dispatch(expenseActions.create(data)),
     categoryDestroy: data => dispatch(categoryActions.destroy(data)),
     categoryUpdate: data => dispatch(categoryActions.update(data)),
   };
