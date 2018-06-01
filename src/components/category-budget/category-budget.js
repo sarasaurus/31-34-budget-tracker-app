@@ -6,9 +6,9 @@ class CategoryBudget extends React.Component {
   render () {
     // need to get the id of the category you want to select the right category from the state categories array
     const { categories, categoryId } = this.props;
-    console.log('BUDGET PROPS:', this.props);
-    console.log('CATEGORYID in BUDGET IS', categoryId);
-    console.log('EXPENSES in BUDGET ARE', categories.expenses);
+    // console.log('BUDGET PROPS:', this.props);
+    // console.log('CATEGORYID in BUDGET IS', categoryId);
+    // console.log('EXPENSES in BUDGET ARE', categories.expenses);
    
     return (
       <div className="budget"><h1>

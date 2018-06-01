@@ -15,7 +15,7 @@ export default store => next => (action) => {
     // .call is from the hasOwnProperty method
     if (Object.prototype.hasOwnProperty.call(state, key)) {
       localStorage[key] = JSON.stringify(state[key]);
-// don't want allll the associated properties, just the ones that exist because of the state obj itself, not whatever it inheirts
+      // don't want allll the associated properties, just the ones that exist because of the state obj itself, not whatever it inheirts
     }
   }
   return result;

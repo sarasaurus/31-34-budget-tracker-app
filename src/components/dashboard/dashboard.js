@@ -9,7 +9,7 @@ import '../../../styles/main.scss';
 class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate, randomKey } = this.props; 
-    console.log('props in dashboard', this.props);
+    // console.log('props in dashboard', this.props);
     // categories is an object with a categories property 
     return (
 <div className="dashboard">
@@ -27,7 +27,7 @@ Dashboard.propTypes = {
 };
 // this is getting the props from the store
 const mapStateToProps = (state) => {
-  console.log('STATE IN DASH', state);
+  // console.log('STATE IN DASH', state);
   return {
     categories: state.categories,
   };

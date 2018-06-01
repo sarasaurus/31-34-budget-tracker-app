@@ -3,6 +3,9 @@
 // --------------------------------------------------------------------------------------
 @import 'vars';
 // notice not using underscore or extension sass knows how to find
+html, body{
+  height:100%;
+}
 body {
   background: $background-color;
   font-family: sans-serif;

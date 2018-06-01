@@ -15,7 +15,7 @@ export default (state = emptyState, { type, payload }) => {
 
   switch (type) {
     case 'CATEGORY_CREATE':
-      console.log(state, 'STATE IN EXPENSE CAT CREATE SWITCH');
+      // console.log(state, 'STATE IN EXPENSE CAT CREATE SWITCH');
       return { ...state, [payload.id]: [] };
     case 'CATEGORY_DESTROY':
       updatedState = { ...state };
@@ -26,7 +26,7 @@ export default (state = emptyState, { type, payload }) => {
       categoryExpenses = state[categoryId];
       updatedExpenses = [...categoryExpenses, payload];
       // budgetTotal = state.map(category => (category.id === categoryId ? category.budget - payload.price : category.budget));
-      console.log(state, 'STATE IN EXPENSE CREATE SWITCH');
+      // console.log(state, 'STATE IN EXPENSE CREATE SWITCH');
       return { ...state, [categoryId]: updatedExpenses };
 
     case 'EXPENSE_UPDATE':

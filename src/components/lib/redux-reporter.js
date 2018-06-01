@@ -1,8 +1,7 @@
 export default store => next => (action) => {
   try {
     console.log('__ACTION__', action);
-    console.log('__DUNNO__');
-    const result = next(action);
+    const result = next(action); // this line updates the store, what does that mean?
     console.log('__STATE__', store.getState());
     // do a set state
     return result;
@@ -11,5 +10,4 @@ export default store => next => (action) => {
     action.error = error;
     return action;
   }
- 
-}
+};

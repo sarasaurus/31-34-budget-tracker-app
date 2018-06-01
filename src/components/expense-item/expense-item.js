@@ -13,7 +13,7 @@ class ExpenseItem extends React.Component {
       expenseUpdate,
     }
 = this.props;
-console.log('expense props', this.props);
+// console.log('expense props', this.props);
     return (
   <div className='expense'>
   <p>{expense.name}: {expense.price}</p>
