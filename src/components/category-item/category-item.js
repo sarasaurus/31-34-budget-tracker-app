@@ -48,7 +48,7 @@ class CategoryItem extends React.Component {
     const hideForm = () => categoryUpdate({ ...category, editing: false }); 
     const updateAndClose = updatedCategory => categoryUpdate({ ...updatedCategory, editing: false });
     // categoryUpdate = this.state.editing ? 
-
+    console.log(category.editing);
     return (
       <div className='category' key={key}>
         <h1>Category: { category.name } Total: ${ category.budget }</h1>
@@ -56,7 +56,7 @@ class CategoryItem extends React.Component {
         <button className='category-delete' onClick={() => categoryDestroy(category)}>Delete</button>
         <Modal className="editing-form" show={category.editing} handleClose={hideForm}>
         <h3>Editing {category.name}</h3>
-        <CategoryForm category={category} onComplete={updateAndClose}/>
+        <CategoryForm className='form-modal' category={category} onComplete={updateAndClose}/>
         </Modal>
         
       
