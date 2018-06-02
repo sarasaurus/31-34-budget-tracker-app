@@ -32,6 +32,12 @@ class CategoryForm extends React.Component {
     const value = event.target.value;// eslint-disable-line
     this.setState({ budget: value });
   }
+  // TODO: if no categories in state-- show form and button=update, button onclick == create and hide,  
+  // if categories in state exist && editing ==false, hide form and button =edit, button OnClick==edit and show,
+  // if categories in state exist && editing == true show form and button = update. button onClick== update and hide 
+  // let editing = false;
+  // console.log('category props', this.props); 
+
   // life cycle hook givn to use by react
   // think of these as listeners--- listenging to state changes
   // this replaces a lifecycle hook called component will recieve props
@@ -39,7 +45,7 @@ class CategoryForm extends React.Component {
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.category) {
-      // console.log('DERIVED STATE', nextProps);
+      console.log('DERIVED STATE', nextProps);
       return nextProps.category;
     }
     return defaultState;
