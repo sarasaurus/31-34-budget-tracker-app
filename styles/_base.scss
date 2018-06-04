@@ -8,7 +8,7 @@ html, body{
 }
 body {
   background: $background-color;
-  font-family: sans-serif;
+  font-family: $font;
   color: $font-color;
 }
 a {
@@ -39,13 +39,11 @@ li {
   margin-left: 70%;
 }
 p {
-padding: $spacing, $spacing;
+padding: $spacing;
 background: $loud;
 font-size: $p-font;
 }
-button {
-  margin: 2%;
-}
+
 h1 {
   font-size: $header-font;
   width: 55%;
@@ -55,9 +53,9 @@ h3 {
   padding: 0;
   margin: 0;
 }
-form {
-  width: 44%;
-  background-color: orange;
-}
+// form {
+//   width: 44%;
+//   background-color: orange;
+// }
 
 

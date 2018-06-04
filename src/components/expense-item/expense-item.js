@@ -32,6 +32,7 @@ class ExpenseItem extends React.Component {
   <button className='category-edit' value='category' onClick={showForm}>Edit</button>
   <button onClick={() => expenseDestroy(expense)}>Delete</button>
   <Modal className="editing-form" show={expense.editing} handleClose={hideForm}>
+  <h3>Editing {expense.name}</h3>
   <ExpenseForm expense={expense} onComplete={updateAndClose} />
   </Modal>
 

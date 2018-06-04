@@ -12,54 +12,103 @@
 }
 .budget {
   background-color: yellow;
-  width: 50% - $spacing;
+  width: 45%;
   float: right;
+  h1 {
+    text-align: right;
+    font-size: $header-font - 1vw;
+    background-color: pink;
+  }
 }
-.budget h1 {
-  text-align: right;
-  font-size: $header-font - 1vw;
-  background-color: pink;
+.expense-box {
+  display: flex;
 }
 .category {
   margin-top: $spacing;
   background-color: fuchsia;
+  h1 {
+     width: 85%;
+     background-color: $primary-color;
+     float: left;
+  }
+  button {
+    margin: 0 $spacing-sm / 2;
+    float: right;
+    width: 10vw;
+  }
+  form {
+    float: right;
+    width: 45%;
+  }
+}
 
-}
-.category h1 {
-  background-color: teal;
-  width: 50%;
-  float: left;
-}
 .category-form {
+  padding: $spacing-sm;
   margin-top: 3px;
   width: 35%;
   float: right;
+  button {
+    font-size: $button-font;
+    width: inherit;
+    float: right;
+  }
+  input {
+    font-size: $p-font;
+    margin: $spacing-sm / 2;
+  }
 }
-.category-form button {
-  font-size: $button-font;
-  width: inherit;
-  float: right;
-}
+
 .category-delete {
   float: right;
   font-size: $button-font;
 }
-.category-form input {
-  font-size: $p-font;
-}
+
 .expense-form {
   margin-top: 3px;
   width: 45%;
   float: left;
 }
 .expense {
+  width: 100%;
   background-color: orange;
+  p {
+    width: 50%;
+     background-color: aqua;
+     float: left;
+   }
+   h1 {
+     display: block;
+     width: 100%;
+     background-color: $secondary-color;
+   }
 }
-.expense p {
- width: 50%;
-  background-color: aqua;
-  float: left;
+.modal{
+  h3 {
+    display: block;
+    padding: $spacing-sm $spacing-sm;
+    background-color: orange;
+    width: 90%;
+  }
+  form {
+    display: block;
+    padding: $spacing-sm $spacing-sm;
+    width: 90%;
+    height: 75%;
+    margin-right: $spacing;
+  }
+  input {
+    margin: $spacing $spacing-sm;
+    padding: $spacing-sm / 2;
+    display: block;
+    width: 50vw;
+  }
+  button {
+    display: block;
+    width: 15vw;
+    padding: $spacing-sm / 2;
+  }
 }
+
 .modal-form {
   width: 75%;
   

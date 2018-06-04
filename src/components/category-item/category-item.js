@@ -45,9 +45,11 @@ class CategoryItem extends React.Component {
         <CategoryForm className='modal-form' category={category} onComplete={updateAndClose}/>
         </Modal>
         
-      
+        
         <ExpenseForm className='expense-form' category={category} onComplete={expenseCreate}/>
-        <div className="expense-list"> <h1>Items:</h1>{categoryExpenses.map(expense => <ExpenseItem expense = {expense} key={expense.id} />) } </div>
+        <div className="expense"> <h1>Items:</h1>
+        <div className="expense-box">{categoryExpenses.map(expense => <ExpenseItem expense = {expense} key={expense.id} />) } </div>
+        </div>
         <CategoryBudget categoryId= {category.id} className='budget-header' />
       </div>
     );

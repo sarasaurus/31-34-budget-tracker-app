@@ -8,12 +8,11 @@ import '../../../styles/main.scss';
 
 class Dashboard extends React.Component {
   render() {
-    const { categories, categoryCreate, randomKey } = this.props; 
+    const { categories, categoryCreate } = this.props; 
     // console.log('props in dashboard', this.props);
     // categories is an object with a categories property 
     return (
 <div className="dashboard">
-{ randomKey('randomKeyData!') }
 <h1>enter an expense category and budget for it</h1>
 <CategoryForm onComplete={categoryCreate} />
 {categories.map((currentCategory, i) => <CategoryItem category={currentCategory}key={i}/>)}
@@ -36,7 +35,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: data => dispatch(categoryActions.create(data)), // calls our create action and passes in data
-    randomKey: data => console.log(data, 'FROM RANDOM KEY'),
   };
 };
 
